@@ -4,13 +4,13 @@ let computerScore = 0;
 const rounds = 5; // Total number of rounds 
 
 
-function getComputerChoice(){ // get Computer choice using random number
+function computerChoice(){ // get Computer choice using random number
     const choices = ["rock", "paper", "scissors"]; // Provides possible computer choices
     return choices[Math.floor(Math.random() * 3)]; // Choses choice based on random number
 }
 
 // Get user choice
-function getUserChoice (){ 
+function userChoice (){ 
     return window.prompt("Choose Rock, Paper or Scissors").toLowerCase(); // Prompts user of input and changes input to lower case.
 }
 
@@ -37,8 +37,8 @@ function playGame() {
     for(let i = 0; i < rounds; i++) {
         console.log(`Round ${i + 1}:`); // Shows round number 
 
-        const user = getUserChoice();  //Stores users choice for current round in user
-        const computer = getComputerChoice(); //Stores computers choice for current round in computer
+        const user = userChoice();  //Stores users choice for current round in user
+        const computer = computerChoice(); //Stores computers choice for current round in computer
 
         console.log(`User chose: ${user}, Computer chose: ${computer}.`);
         const result = playRound(user, computer);  // Runs round input through game logic of playRound() and returns result
@@ -57,6 +57,26 @@ function playGame() {
 
 
 playGame(); // Starts the game
+
+
+// Start game scores at zone, set number of rounds
+let computerScore = 0;
+let userScore = 0;
+const rounds = 5;
+// Get computer choice using random numbers 
+function computerChoice(){
+    let choices = ["Rock", "Paper", "Scissor"];
+    return choices[Math.floor(Math.random() * 3];
+
+}
+
+
+// Promt user for input and change to lower case
+// Set rules to play one round 
+// Set rules to play 5 rounds
+
+
+
 
 
 
