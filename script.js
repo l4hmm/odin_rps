@@ -9,9 +9,10 @@ function computerChoice(){ // get Computer choice using random number
     return choices[Math.floor(Math.random() * 3)]; // Choses choice based on random number
 }
 
+
 // Get user choice
 function userChoice (){ 
-    return window.prompt("Choose Rock, Paper or Scissors").toLowerCase(); // Prompts user of input and changes input to lower case.
+    //return window.prompt("Choose Rock, Paper or Scissors").toLowerCase(); // Prompts user of input and changes input to lower case.
 }
 
 // Play one round
@@ -32,7 +33,7 @@ function playRound(userChoice, computerChoice){
 }
 
 // Logic to play 5 rounds
-function playGame() {
+//function playGame() {
     // Starts rounds at 0 and iterates until 5 rounds are played 
     for(let i = 0; i < rounds; i++) {
         console.log(`Round ${i + 1}:`); // Shows round number 
@@ -53,27 +54,13 @@ function playGame() {
     } else {
         console.log("It's an overall tie!");
     }
-}
+
 
 
 playGame(); // Starts the game
 
 
-// Start game scores at zone, set number of rounds
-let computerScore = 0;
-let userScore = 0;
-const rounds = 5;
-// Get computer choice using random numbers 
-function computerChoice(){
-    let choices = ["Rock", "Paper", "Scissor"];
-    return choices[Math.floor(Math.random() * 3];
 
-}
-
-
-// Promt user for input and change to lower case
-// Set rules to play one round 
-// Set rules to play 5 rounds
 
 
 
