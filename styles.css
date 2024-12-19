@@ -40,17 +40,20 @@ body {
     width: 80%;
     height: 80%;
     padding: 20px;
+    box-shadow: 0 0 5px 2px #5e5555;
     
 }
 
 .section h1{
     margin-bottom: calc(var(--spacing-unit) * 3);
     font-size: calc(var(--font-size-base) * 3);
+    text-shadow: 2px 2px 1px var(--button-colour);
 }
 
 .section button{
     margin-bottom: calc(var(--spacing-unit)* 3);
     font-family: 'Source Code Pro', sans-serif;
+    
 }
 .bold {
     font-weight: bold;
@@ -67,6 +70,7 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 2px 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 

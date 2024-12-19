@@ -34,37 +34,67 @@ function playRound(userChoice, computerChoice){
 rockBtn.onclick = () => {
     userChoice = "Rock";
     const computerInput = computerChoice();
-    
-    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.textContent = `Result: ${roundResult}`;
-    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+
+    // Update choices
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
+
+    // Update result
+    document.querySelector("#resultText").textContent = roundResult;
+
+    // Update scores
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
 };
     
 paperBtn.onclick = () => {
-    userChoice = "Paper";
+    const userChoice = "Paper";
     const computerInput = computerChoice();
-
-    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.textContent = `Result: ${roundResult}`;
-    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+
+    // Update choices
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
+
+    // Update result
+    document.querySelector("#resultText").textContent = roundResult;
+
+    // Update scores
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
 };
+
     
 scissorBtn.onclick = () => {
-    userChoice = "Scissor";
+    userChoice = "Scissors";
     const computerInput = computerChoice();
-    
-    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.textContent = `Result: ${roundResult}`;
-    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+
+    // Update choices display
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
+
+    // Update result display
+    document.querySelector("#resultText").textContent = roundResult;
+
+    // Update scores display
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
 };
 
 newGameBtn.onclick = () => {
     userScore = 0;
     computerScore = 0;
-    choicesDisplay.textContent = `our Choice: None | Computers Choice: None`;
-    resultsDisplay.textContent = `Result: Play the game to see results!`;
-    scoresDisplay.textContent = `Your Score: 0 | Computers Score: 0`;
-}
+
+    // Reset choices display
+    document.querySelector("#yourChoice").textContent = "None";
+    document.querySelector("#computerChoice").textContent = "None";
+
+    // Reset result display
+    document.querySelector("#resultText").textContent = "Play the game to see results!";
+
+    // Reset scores display
+    document.querySelector("#yourScore").textContent = "0";
+    document.querySelector("#computerScore").textContent = "0";
+};
