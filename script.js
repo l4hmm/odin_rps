@@ -1,26 +1,25 @@
+const rockBtn = document.querySelector("#rockButton");
+const paperBtn = document.querySelector("#paperButton");
+const scissorBtn = document.querySelector("#scissorButton");
+const newGameBtn = document.querySelector("#newButton")
+
+const choicesDisplay = document.querySelector("#choices");
+const resultsDisplay = document.querySelector("#results");
+const scoresDisplay = document.querySelector("#scores");
 
 let userScore = 0; // Scores start at 0
 let computerScore = 0;
-const rounds = 5; // Total number of rounds 
-
 
 function computerChoice(){ // get Computer choice using random number
-    const choices = ["rock", "paper", "scissors"]; // Provides possible computer choices
+    const choices = ["Rock", "Paper", "Scissors"]; // Provides possible computer choices
     return choices[Math.floor(Math.random() * 3)]; // Choses choice based on random number
 }
 
-
-// Get user choice
-function userChoice (){ 
-    //return window.prompt("Choose Rock, Paper or Scissors").toLowerCase(); // Prompts user of input and changes input to lower case.
-}
-
-// Play one round
 function playRound(userChoice, computerChoice){
     if (
-        (userChoice === "rock" && computerChoice === "scissors") ||   // Logic of game
-        (userChoice === "paper" && computerChoice === "rock") ||
-        (userChoice === "scissors" && computerChoice === "paper")
+        (userChoice === "Rock" && computerChoice === "Scissors") ||   // Logic of game
+        (userChoice === "Paper" && computerChoice === "Rock") ||
+        (userChoice === "Scissors" && computerChoice === "Paper")
     ) {
         userScore++;  // Adds 1 point to user score 
         return `User wins! ${userChoice} beats ${computerChoice}.`;
@@ -32,38 +31,70 @@ function playRound(userChoice, computerChoice){
     }
 }
 
-// Logic to play 5 rounds
-//function playGame() {
-    // Starts rounds at 0 and iterates until 5 rounds are played 
-    for(let i = 0; i < rounds; i++) {
-        console.log(`Round ${i + 1}:`); // Shows round number 
+rockBtn.onclick = () => {
+    userChoice = "Rock";
+    const computerInput = computerChoice();
+    const roundResult = playRound(userChoice, computerInput);
 
-        const user = userChoice();  //Stores users choice for current round in user
-        const computer = computerChoice(); //Stores computers choice for current round in computer
+    // Update choices
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
 
-        console.log(`User chose: ${user}, Computer chose: ${computer}.`);
-        const result = playRound(user, computer);  // Runs round input through game logic of playRound() and returns result
-        console.log(`Current Score -> User: ${userScore}, Computer: ${computerScore}.`);
-    }
+    // Update result
+    document.querySelector("#resultText").textContent = roundResult;
 
-    console.log(`Final scores: user: ${userScore}, Computer: ${computerScore}.`); //Prints final score after 5 rounds
-    if (userScore > computerScore){  // Prints winner of 5 rounds using else if 
-        console.log("Congratulations! You are the winner!");
-        } else if (computerScore > userScore) {
-            console.log("Computer wins this time!");
-    } else {
-        console.log("It's an overall tie!");
-    }
+    // Update scores
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
+};
+    
+paperBtn.onclick = () => {
+    const userChoice = "Paper";
+    const computerInput = computerChoice();
+    const roundResult = playRound(userChoice, computerInput);
 
+    // Update choices
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
 
+    // Update result
+    document.querySelector("#resultText").textContent = roundResult;
 
-playGame(); // Starts the game
+    // Update scores
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
+};
 
+    
+scissorBtn.onclick = () => {
+    userChoice = "Scissors";
+    const computerInput = computerChoice();
+    const roundResult = playRound(userChoice, computerInput);
 
+    // Update choices display
+    document.querySelector("#yourChoice").textContent = userChoice;
+    document.querySelector("#computerChoice").textContent = computerInput;
 
+    // Update result display
+    document.querySelector("#resultText").textContent = roundResult;
 
+    // Update scores display
+    document.querySelector("#yourScore").textContent = userScore;
+    document.querySelector("#computerScore").textContent = computerScore;
+};
 
+newGameBtn.onclick = () => {
+    userScore = 0;
+    computerScore = 0;
 
+    // Reset choices display
+    document.querySelector("#yourChoice").textContent = "None";
+    document.querySelector("#computerChoice").textContent = "None";
 
+    // Reset result display
+    document.querySelector("#resultText").textContent = "Play the game to see results!";
 
-
+    // Reset scores display
+    document.querySelector("#yourScore").textContent = "0";
+    document.querySelector("#computerScore").textContent = "0";
+};
