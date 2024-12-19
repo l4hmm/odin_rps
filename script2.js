@@ -35,36 +35,36 @@ rockBtn.onclick = () => {
     userChoice = "Rock";
     const computerInput = computerChoice();
     
-    choicesDisplay.innerText = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
+    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.innerText = `Result: ${roundResult}`;
-    scoresDisplay.innerText =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+    resultsDisplay.textContent = `Result: ${roundResult}`;
+    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
 };
     
 paperBtn.onclick = () => {
     userChoice = "Paper";
     const computerInput = computerChoice();
 
-    choicesDisplay.innerText = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
+    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.innerText = `Result: ${roundResult}`;
-    scoresDisplay.innerText =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+    resultsDisplay.textContent = `Result: ${roundResult}`;
+    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
 };
     
 scissorBtn.onclick = () => {
     userChoice = "Scissor";
     const computerInput = computerChoice();
     
-    choicesDisplay.innerText = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
+    choicesDisplay.textContent = `Your Choice: ${userChoice} | Computer Choice: ${computerInput}`;
     const roundResult = playRound(userChoice, computerInput);
-    resultsDisplay.innerText = `Result: ${roundResult}`;
-    scoresDisplay.innerText =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
+    resultsDisplay.textContent = `Result: ${roundResult}`;
+    scoresDisplay.textContent =`Your Score: ${userScore} | Computer Score: ${computerScore}`;
 };
 
 newGameBtn.onclick = () => {
     userScore = 0;
     computerScore = 0;
-    choicesDisplay.innerText = `our Choice: None | Computers Choice: None`;
-    resultsDisplay.innerText = `Result: Play the game to see results!`;
-    scoresDisplay.innerText = `Your Score: 0 | Computers Score: 0`;
+    choicesDisplay.textContent = `our Choice: None | Computers Choice: None`;
+    resultsDisplay.textContent = `Result: Play the game to see results!`;
+    scoresDisplay.textContent = `Your Score: 0 | Computers Score: 0`;
 }
