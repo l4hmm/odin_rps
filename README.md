@@ -1,4 +1,4 @@
-# odin_rps
-My code for rock paper scissors game.
+# Rock Paper Scissors
+Rock, paper, scissors game created using HTML, CCS and Javascript.
 
-[Visit my site ](https://l4hmm.github.io/odin_rps/) 👈
+[Visit my site](https://l4hmm.github.io/odin_rps/) 👈
